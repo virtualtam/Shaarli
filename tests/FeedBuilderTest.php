@@ -32,13 +32,12 @@ class FeedBuilderTest extends PHPUnit_Framework_TestCase
     public static $serverInfo;
 
     /**
-     * Called before every test method.
+     * Setup test resources
      */
     public static function setUpBeforeClass()
     {
         $refLinkDB = new ReferenceLinkDB();
         $refLinkDB->write(self::$testDatastore);
-        self::$linkDB = new LinkDB(self::$testDatastore, true, false);
         self::$serverInfo = array(
             'HTTPS' => 'Off',
             'SERVER_NAME' => 'host.tld',
@@ -46,6 +45,14 @@ class FeedBuilderTest extends PHPUnit_Framework_TestCase
             'SCRIPT_NAME' => '/index.php',
             'REQUEST_URI' => '/index.php?do=feed',
         );
+    }
+
+    /**
+     * Reset the LinkDB before each test
+     */
+    public function setUp()
+    {
+        self::$linkDB = new LinkDB(self::$testDatastore, true, false);
     }
 
     /**
@@ -111,7 +118,6 @@ class FeedBuilderTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test HTML escaping in RSS feed.
-     * @group WIP
      */
     public function testRSSHTMLEscaping()
     {
@@ -124,11 +130,14 @@ class FeedBuilderTest extends PHPUnit_Framework_TestCase
             'created' => new DateTime(),
             'updated' => null,
             'tags' => 'éêè',
-            'shorturl' => 'http://dummy',
+            'shorturl' => 'dummy',
         );
-        file_put_contents(self::$testDatastore,
-            '<?php /* '.base64_encode(gzdeflate(serialize(array($link)))).' */ ?>');
-        self::$linkDB = new LinkDB(self::$testDatastore, true, false);
+        $testDatastore = 'sandbox/escaping.php';
+        file_put_contents(
+            $testDatastore,
+            '<?php /* '.base64_encode(gzdeflate(serialize(array($link)))).' */ ?>'
+        );
+        self::$linkDB = new LinkDB($testDatastore, true, false);
 
         $feedBuilder = new FeedBuilder(self::$linkDB, FeedBuilder::$FEED_RSS, self::$serverInfo, null, false);
         $feedBuilder->setLocale(self::$LOCALE);
