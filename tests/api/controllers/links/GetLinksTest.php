@@ -1,5 +1,5 @@
 <?php
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 
@@ -15,7 +15,7 @@ use Slim\Http\Response;
  *
  * @see http://shaarli.github.io/api-documentation/#links-links-collection-get
  *
- * @package Shaarli\Api\Controllers
+ * @package Shaarli\Api\Controller
  */
 class GetLinksTest extends \PHPUnit_Framework_TestCase
 {

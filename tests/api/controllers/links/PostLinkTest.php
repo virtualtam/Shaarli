@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use PHPUnit\Framework\TestCase;
 use Shaarli\Config\ConfigManager;
@@ -15,7 +15,7 @@ use Slim\Router;
  *
  * Test POST Link REST API service.
  *
- * @package Shaarli\Api\Controllers
+ * @package Shaarli\Api\Controller
  */
 class PostLinkTest extends TestCase
 {

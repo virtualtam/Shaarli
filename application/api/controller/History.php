@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Api\Exception\ApiBadParametersException;
 use Slim\Http\Request;
@@ -12,7 +12,7 @@ use Slim\Http\Response;
  *
  * REST API Controller: /history
  *
- * @package Shaarli\Api\Controllers
+ * @package Shaarli\Api\Controller
  */
 class History extends ApiController
 {

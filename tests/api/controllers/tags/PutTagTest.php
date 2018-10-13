@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Api\Exception\ApiBadParametersException;
 use Shaarli\Config\ConfigManager;

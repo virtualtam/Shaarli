@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 use \Slim\Container;
@@ -10,7 +10,7 @@ use \Slim\Container;
  *
  * Defines REST API Controller dependencies injected from the container.
  *
- * @package Api\Controllers
+ * @package Api\Controller
  */
 abstract class ApiController
 {

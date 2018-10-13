@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Api\ApiUtils;
 use Shaarli\Api\Exception\ApiBadParametersException;
@@ -13,7 +13,7 @@ use Slim\Http\Response;
  *
  * REST API Controller: all services related to links collection.
  *
- * @package Api\Controllers
+ * @package Api\Controller
  * @see http://shaarli.github.io/api-documentation/#links-links-collection
  */
 class Links extends ApiController

@@ -1,5 +1,5 @@
 <?php
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 
@@ -13,7 +13,7 @@ use Slim\Http\Response;
  *
  * Test REST API controller Info.
  *
- * @package Api\Controllers
+ * @package Api\Controller
  */
 class InfoTest extends \PHPUnit_Framework_TestCase
 {

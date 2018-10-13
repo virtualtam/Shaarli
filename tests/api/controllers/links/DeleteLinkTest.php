@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 use Slim\Container;

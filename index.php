@@ -1888,19 +1888,19 @@ $app = new \Slim\App($container);
 
 // REST API routes
 $app->group('/api/v1', function () {
-    $this->get('/info', '\Shaarli\Api\Controllers\Info:getInfo')->setName('getInfo');
-    $this->get('/links', '\Shaarli\Api\Controllers\Links:getLinks')->setName('getLinks');
-    $this->get('/links/{id:[\d]+}', '\Shaarli\Api\Controllers\Links:getLink')->setName('getLink');
-    $this->post('/links', '\Shaarli\Api\Controllers\Links:postLink')->setName('postLink');
-    $this->put('/links/{id:[\d]+}', '\Shaarli\Api\Controllers\Links:putLink')->setName('putLink');
-    $this->delete('/links/{id:[\d]+}', '\Shaarli\Api\Controllers\Links:deleteLink')->setName('deleteLink');
+    $this->get('/info', '\Shaarli\Api\Controller\Info:getInfo')->setName('getInfo');
+    $this->get('/links', '\Shaarli\Api\Controller\Links:getLinks')->setName('getLinks');
+    $this->get('/links/{id:[\d]+}', '\Shaarli\Api\Controller\Links:getLink')->setName('getLink');
+    $this->post('/links', '\Shaarli\Api\Controller\Links:postLink')->setName('postLink');
+    $this->put('/links/{id:[\d]+}', '\Shaarli\Api\Controller\Links:putLink')->setName('putLink');
+    $this->delete('/links/{id:[\d]+}', '\Shaarli\Api\Controller\Links:deleteLink')->setName('deleteLink');
 
-    $this->get('/tags', '\Shaarli\Api\Controllers\Tags:getTags')->setName('getTags');
-    $this->get('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controllers\Tags:getTag')->setName('getTag');
-    $this->put('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controllers\Tags:putTag')->setName('putTag');
-    $this->delete('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controllers\Tags:deleteTag')->setName('deleteTag');
+    $this->get('/tags', '\Shaarli\Api\Controller\Tags:getTags')->setName('getTags');
+    $this->get('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controller\Tags:getTag')->setName('getTag');
+    $this->put('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controller\Tags:putTag')->setName('putTag');
+    $this->delete('/tags/{tagName:[\w]+}', '\Shaarli\Api\Controller\Tags:deleteTag')->setName('deleteTag');
 
-    $this->get('/history', '\Shaarli\Api\Controllers\History:getHistory')->setName('getHistory');
+    $this->get('/history', '\Shaarli\Api\Controller\History:getHistory')->setName('getHistory');
 })->add('\Shaarli\Api\ApiMiddleware');
 
 $response = $app->run(true);

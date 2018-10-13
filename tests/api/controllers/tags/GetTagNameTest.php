@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 
@@ -14,7 +14,7 @@ use Slim\Http\Response;
  *
  * Test getTag by tag name API service.
  *
- * @package Shaarli\Api\Controllers
+ * @package Shaarli\Api\Controller
  */
 class GetTagNameTest extends \PHPUnit_Framework_TestCase
 {

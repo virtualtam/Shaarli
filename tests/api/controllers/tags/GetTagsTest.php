@@ -1,5 +1,5 @@
 <?php
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Shaarli\Config\ConfigManager;
 
@@ -13,7 +13,7 @@ use Slim\Http\Response;
  *
  * Test get tag list REST API service.
  *
- * @package Shaarli\Api\Controllers
+ * @package Shaarli\Api\Controller
  */
 class GetTagsTest extends \PHPUnit_Framework_TestCase
 {

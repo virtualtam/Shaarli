@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Controllers;
+namespace Shaarli\Api\Controller;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -10,7 +10,7 @@ use Slim\Http\Response;
  *
  * REST API Controller: /info
  *
- * @package Api\Controllers
+ * @package Api\Controller
  * @see http://shaarli.github.io/api-documentation/#links-instance-information-get
  */
 class Info extends ApiController
