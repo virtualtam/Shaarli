@@ -258,7 +258,7 @@ msgstr ""
 msgid "You are not authorized to alter config."
 msgstr "Du bist nicht berechtigt, die Konfiguration zu ändern."
 
-#: application/exceptions/IOException.php:19
+#: application/exception/IOException.php:21
 msgid "Error accessing"
 msgstr "Fehler beim Zugriff"
 

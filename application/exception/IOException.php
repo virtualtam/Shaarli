@@ -1,9 +1,11 @@
 <?php
 
+namespace Shaarli\Exception;
+
 /**
  * Exception class thrown when a filesystem access failure happens
  */
-class IOException extends Exception
+class IOException extends \Exception
 {
     private $path;
 

@@ -1,4 +1,6 @@
 <?php
+use Shaarli\Exception\IOException;
+
 /**
  * Data storage for links.
  *

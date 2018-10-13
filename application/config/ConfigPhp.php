@@ -1,6 +1,8 @@
 <?php
 namespace Shaarli\Config;
 
+use Shaarli\Exception\IOException;
+
 /**
  * Class ConfigPhp (ConfigIO implementation)
  *
@@ -95,7 +97,7 @@ class ConfigPhp implements ConfigIO
      */
     public function write($filepath, $conf)
     {
-        $configStr = '<?php '. PHP_EOL;
+        $configStr = '<?php'. PHP_EOL;
         foreach (self::$ROOT_KEYS as $key) {
             if (isset($conf[$key])) {
                 $configStr .= '$GLOBALS[\'' . $key . '\'] = ' . var_export($conf[$key], true) . ';' . PHP_EOL;
@@ -124,7 +126,7 @@ class ConfigPhp implements ConfigIO
         if (!file_put_contents($filepath, $configStr)
             || strcmp(file_get_contents($filepath), $configStr) != 0
         ) {
-            throw new \IOException(
+            throw new IOException(
                 $filepath,
                 t('Shaarli could not create the config file. '.
                   'Please make sure Shaarli has the right to write in the folder is it installed in.')

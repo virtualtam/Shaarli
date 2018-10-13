@@ -1,6 +1,8 @@
 <?php
 namespace Shaarli\Config;
 
+use Shaarli\Exception\IOException;
+
 /**
  * Class ConfigPhpTest
  */
@@ -67,7 +69,7 @@ class ConfigPhpTest extends \PHPUnit_Framework_TestCase
             )
         );
         $this->configIO->write($dataFile, $data);
-        $expected = '<?php 
+        $expected = '<?php
 $GLOBALS[\'login\'] = \'root\';
 $GLOBALS[\'redirector\'] = \'lala\';
 $GLOBALS[\'config\'][\'DATASTORE\'] = \'data/datastore.php\';

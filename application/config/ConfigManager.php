@@ -3,6 +3,7 @@ namespace Shaarli\Config;
 
 use Shaarli\Config\Exception\MissingFieldConfigException;
 use Shaarli\Config\Exception\UnauthorizedConfigException;
+use Shaarli\Exception\IOException;
 
 /**
  * Class ConfigManager
@@ -207,7 +208,7 @@ class ConfigManager
      *
      * @throws MissingFieldConfigException: a mandatory field has not been provided in $conf.
      * @throws UnauthorizedConfigException: user is not authorize to change configuration.
-     * @throws \IOException: an error occurred while writing the new config file.
+     * @throws IOException: an error occurred while writing the new config file.
      */
     public function write($isLoggedIn)
     {

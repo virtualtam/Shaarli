@@ -1,6 +1,5 @@
 <?php
-
-require_once 'exceptions/IOException.php';
+use Shaarli\Exception\IOException;
 
 /**
  * Class FileUtils
