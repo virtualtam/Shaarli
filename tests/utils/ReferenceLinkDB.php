@@ -1,4 +1,9 @@
 <?php
+
+use Shaarli\Bookmark\LinkDB;
+
+require_once 'application/Utils.php';
+
 /**
  * Populates a reference datastore to test LinkDB
  */

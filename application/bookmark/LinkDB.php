@@ -1,4 +1,8 @@
 <?php
+
+namespace Shaarli\Bookmark;
+
+use Shaarli\FileUtils;
 use Shaarli\Exception\IOException;
 
 /**
@@ -44,7 +48,7 @@ use Shaarli\Exception\IOException;
  *     - New DB: link #1 (2010-01-01) link #2 (2016-01-01) link #3 (2013-01-01)
  *     - Real order: #2 #3 #1
  */
-class LinkDB implements Iterator, Countable, ArrayAccess
+class LinkDB implements \Iterator, \Countable, \ArrayAccess
 {
     // Links are stored as a PHP serialized string
     private $datastore;
@@ -260,7 +264,7 @@ To learn how to use Shaarli, consult the link "Documentation" at the bottom of t
 You use the community supported version of the original Shaarli project, by Sebastien Sauvage.'
             ),
             'private'=>0,
-            'created'=> new DateTime(),
+            'created'=> new \DateTime(),
             'tags'=>'opensource software'
         );
         $link['shorturl'] = link_small_hash($link['created'], $link['id']);
@@ -272,7 +276,7 @@ You use the community supported version of the original Shaarli project, by Seba
             'url'=>'http://sebsauvage.net/paste/?8434b27936c09649#bR7XsXhoTiLcqCpQbmOpBi3rq2zzQUC5hBI7ZT1O3x8=',
             'description'=> t('Shhhh! I\'m a private link only YOU can see. You can delete me too.'),
             'private'=>1,
-            'created'=> new DateTime('1 minute ago'),
+            'created'=> new \DateTime('1 minute ago'),
             'tags'=>'secretstuff',
         );
         $link['shorturl'] = link_small_hash($link['created'], $link['id']);
@@ -328,9 +332,9 @@ You use the community supported version of the original Shaarli project, by Seba
             // To be able to load links before running the update, and prepare the update
             if (! isset($link['created'])) {
                 $link['id'] = $link['linkdate'];
-                $link['created'] = DateTime::createFromFormat(self::LINK_DATE_FORMAT, $link['linkdate']);
+                $link['created'] = \DateTime::createFromFormat(self::LINK_DATE_FORMAT, $link['linkdate']);
                 if (! empty($link['updated'])) {
-                    $link['updated'] = DateTime::createFromFormat(self::LINK_DATE_FORMAT, $link['updated']);
+                    $link['updated'] = \DateTime::createFromFormat(self::LINK_DATE_FORMAT, $link['updated']);
                 }
                 $link['shorturl'] = smallHash($link['linkdate']);
             }

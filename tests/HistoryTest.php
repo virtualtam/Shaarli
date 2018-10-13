@@ -1,9 +1,9 @@
 <?php
 
-require_once 'application/History.php';
+namespace Shaarli;
 
 
-class HistoryTest extends PHPUnit_Framework_TestCase
+class HistoryTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var string History file path

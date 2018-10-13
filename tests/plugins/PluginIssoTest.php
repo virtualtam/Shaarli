@@ -1,4 +1,5 @@
 <?php
+use Shaarli\Bookmark\LinkDB;
 use Shaarli\Config\ConfigManager;
 
 require_once 'plugins/isso/isso.php';

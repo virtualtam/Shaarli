@@ -57,12 +57,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 // Shaarli library
 require_once 'application/ApplicationUtils.php';
-require_once 'application/config/ConfigPlugin.php';
-require_once 'application/FileUtils.php';
-require_once 'application/History.php';
-require_once 'application/LinkDB.php';
-require_once 'application/LinkFilter.php';
-require_once 'application/LinkUtils.php';
 require_once 'application/NetscapeBookmarkUtils.php';
 require_once 'application/PageBuilder.php';
 require_once 'application/TimeZone.php';
@@ -70,17 +64,23 @@ require_once 'application/Utils.php';
 require_once 'application/PluginManager.php';
 require_once 'application/Router.php';
 require_once 'application/Updater.php';
+require_once 'application/bookmark/LinkUtils.php';
+require_once 'application/config/ConfigPlugin.php';
 require_once 'application/feed/Cache.php';
 require_once 'application/http/HttpUtils.php';
 require_once 'application/http/Url.php';
+use \Shaarli\FileUtils;
+use \Shaarli\History;
+use \Shaarli\Languages;
+use \Shaarli\ThemeUtils;
+use \Shaarli\Thumbnailer;
+use \Shaarli\Bookmark\LinkDB;
+use \Shaarli\Bookmark\LinkFilter;
 use \Shaarli\Config\ConfigManager;
 use \Shaarli\Feed\CachedPage;
 use \Shaarli\Feed\FeedBuilder;
-use \Shaarli\Languages;
 use \Shaarli\Security\LoginManager;
 use \Shaarli\Security\SessionManager;
-use \Shaarli\ThemeUtils;
-use \Shaarli\Thumbnailer;
 
 // Ensure the PHP version is supported
 try {

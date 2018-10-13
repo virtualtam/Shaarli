@@ -1,4 +1,7 @@
 <?php
+
+namespace Shaarli;
+
 use Shaarli\Exception\IOException;
 
 /**

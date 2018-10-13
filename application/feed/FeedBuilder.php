@@ -2,6 +2,8 @@
 
 namespace Shaarli\Feed;
 
+use Shaarli\Bookmark\LinkDB;
+
 /**
  * FeedBuilder class.
  *

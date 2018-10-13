@@ -1,5 +1,7 @@
 <?php
 
+namespace Shaarli\Bookmark;
+
 /**
  * Class LinkFilter.
  *
@@ -402,12 +404,12 @@ class LinkFilter
      *
      * @return array all link matching given day.
      *
-     * @throws Exception if date format is invalid.
+     * @throws \Exception if date format is invalid.
      */
     public function filterDay($day)
     {
         if (! checkDateFormat('Ymd', $day)) {
-            throw new Exception('Invalid date format');
+            throw new \Exception('Invalid date format');
         }
 
         $filtered = array();
@@ -441,7 +443,7 @@ class LinkFilter
     }
 }
 
-class LinkNotFoundException extends Exception
+class LinkNotFoundException extends \Exception
 {
     /**
      * LinkNotFoundException constructor.

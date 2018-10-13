@@ -1,5 +1,7 @@
 <?php
 
+namespace Shaarli;
+
 /**
  * Class History
  *
@@ -151,7 +153,7 @@ class History
 
         $item = [
             'event' => $status,
-            'datetime' => new DateTime(),
+            'datetime' => new \DateTime(),
             'id' => $id !== null ? $id : '',
         ];
         $this->history = array_merge([$item], $this->history);
@@ -191,7 +193,7 @@ class History
      */
     protected function write()
     {
-        $comparaison = new DateTime('-'. $this->retentionTime . ' seconds');
+        $comparaison = new \DateTime('-'. $this->retentionTime . ' seconds');
         foreach ($this->history as $key => $value) {
             if ($value['datetime'] < $comparaison) {
                 unset($this->history[$key]);

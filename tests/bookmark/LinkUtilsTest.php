@@ -1,11 +1,15 @@
 <?php
 
-require_once 'application/LinkUtils.php';
+namespace Shaarli\Bookmark;
+
+require_once 'application/bookmark/LinkUtils.php';
+require_once 'tests/utils/CurlUtils.php';
+require_once 'tests/utils/ReferenceLinkDB.php';
 
 /**
 * Class LinkUtilsTest.
 */
-class LinkUtilsTest extends PHPUnit_Framework_TestCase
+class LinkUtilsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Test html_extract_title() when the title is found.
@@ -207,7 +211,7 @@ class LinkUtilsTest extends PHPUnit_Framework_TestCase
      */
     public function testCountPrivateLinks()
     {
-        $refDB = new ReferenceLinkDB();
+        $refDB = new \ReferenceLinkDB();
         $this->assertEquals($refDB->countPrivateLinks(), count_private($refDB->getLinks()));
     }
 
@@ -325,97 +329,5 @@ class LinkUtilsTest extends PHPUnit_Framework_TestCase
     {
         $hashtagLink = '<a href="'. $index .'?addtag=$1" title="Hashtag $1">#$1</a>';
         return str_replace('$1', $hashtag, $hashtagLink);
-    }
-}
-
-// old style mock: PHPUnit doesn't allow function mock
-
-/**
- * Returns code 200 or html content type.
- *
- * @param resource $ch   cURL resource
- * @param int      $type cURL info type
- *
- * @return int|string 200 or 'text/html'
- */
-function ut_curl_getinfo_ok($ch, $type)
-{
-    switch ($type) {
-        case CURLINFO_RESPONSE_CODE:
-            return 200;
-        case CURLINFO_CONTENT_TYPE:
-            return 'text/html; charset=utf-8';
-    }
-}
-
-/**
- * Returns code 200 or html content type without charset.
- *
- * @param resource $ch   cURL resource
- * @param int      $type cURL info type
- *
- * @return int|string 200 or 'text/html'
- */
-function ut_curl_getinfo_no_charset($ch, $type)
-{
-    switch ($type) {
-        case CURLINFO_RESPONSE_CODE:
-            return 200;
-        case CURLINFO_CONTENT_TYPE:
-            return 'text/html';
-    }
-}
-
-/**
- * Invalid response code.
- *
- * @param resource $ch   cURL resource
- * @param int      $type cURL info type
- *
- * @return int|string 404 or 'text/html'
- */
-function ut_curl_getinfo_rc_ko($ch, $type)
-{
-    switch ($type) {
-        case CURLINFO_RESPONSE_CODE:
-            return 404;
-        case CURLINFO_CONTENT_TYPE:
-            return 'text/html; charset=utf-8';
-    }
-}
-
-/**
- * Invalid content type.
- *
- * @param resource $ch   cURL resource
- * @param int      $type cURL info type
- *
- * @return int|string 200 or 'text/plain'
- */
-function ut_curl_getinfo_ct_ko($ch, $type)
-{
-    switch ($type) {
-        case CURLINFO_RESPONSE_CODE:
-            return 200;
-        case CURLINFO_CONTENT_TYPE:
-            return 'text/plain';
-    }
-}
-
-/**
- * Invalid response code and content type.
- *
- * @param resource $ch   cURL resource
- * @param int      $type cURL info type
- *
- * @return int|string 404 or 'text/plain'
- */
-function ut_curl_getinfo_rs_ct_ko($ch, $type)
-{
-    switch ($type) {
-        case CURLINFO_RESPONSE_CODE:
-            return 404;
-        case CURLINFO_CONTENT_TYPE:
-            return 'text/plain';
     }
 }

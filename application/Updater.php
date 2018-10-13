@@ -1,4 +1,6 @@
 <?php
+
+use Shaarli\Bookmark\LinkFilter;
 use Shaarli\Config\ConfigJson;
 use Shaarli\Config\ConfigPhp;
 use Shaarli\Config\ConfigManager;

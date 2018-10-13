@@ -1,12 +1,10 @@
 <?php
-/**
- * Link datastore tests
- */
 
+namespace Shaarli\Bookmark;
+
+use Shaarli\FileUtils;
 use Shaarli\Exception\IOException;
 
-require_once 'application/FileUtils.php';
-require_once 'application/LinkDB.php';
 require_once 'application/Utils.php';
 require_once 'tests/utils/ReferenceLinkDB.php';
 
@@ -14,13 +12,13 @@ require_once 'tests/utils/ReferenceLinkDB.php';
 /**
  * Unitary tests for LinkDB
  */
-class LinkDBTest extends PHPUnit_Framework_TestCase
+class LinkDBTest extends \PHPUnit\Framework\TestCase
 {
     // datastore to test write operations
     protected static $testDatastore = 'sandbox/datastore.php';
 
     /**
-     * @var ReferenceLinkDB instance.
+     * @var \ReferenceLinkDB instance.
      */
     protected static $refDB = null;
 
@@ -48,7 +46,7 @@ class LinkDBTest extends PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        self::$refDB = new ReferenceLinkDB();
+        self::$refDB = new \ReferenceLinkDB();
         self::$refDB->write(self::$testDatastore);
 
         self::$publicLinkDB = new LinkDB(self::$testDatastore, false, false);

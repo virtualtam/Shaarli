@@ -31,13 +31,14 @@
     "autoload": {
         "psr-4": {
             "Shaarli\\": "application",
-            "Shaarli\\Exception\\": "application/exception",
             "Shaarli\\Api\\": "application/api/",
             "Shaarli\\Api\\Controller\\": "application/api/controller",
             "Shaarli\\Api\\Exception\\": "application/api/exception",
-            "Shaarli\\Feed\\": "application/feed",
+            "Shaarli\\Bookmark\\": "application/bookmark",
             "Shaarli\\Config\\": "application/config/",
             "Shaarli\\Config\\Exception\\": "application/config/exception",
+            "Shaarli\\Exception\\": "application/exception",
+            "Shaarli\\Feed\\": "application/feed",
             "Shaarli\\Http\\": "application/http",
             "Shaarli\\Security\\": "application/security"
         }

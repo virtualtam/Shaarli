@@ -1,11 +1,11 @@
 <?php
 
-require_once 'application/LinkFilter.php';
+namespace Shaarli\Bookmark;
 
 /**
  * Class LinkFilterTest.
  */
-class LinkFilterTest extends PHPUnit_Framework_TestCase
+class LinkFilterTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var string Test datastore path.
@@ -17,7 +17,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
     protected static $linkFilter;
 
     /**
-     * @var ReferenceLinkDB instance
+     * @var \ReferenceLinkDB instance
      */
     protected static $refDB;
 
@@ -31,7 +31,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-        self::$refDB = new ReferenceLinkDB();
+        self::$refDB = new \ReferenceLinkDB();
         self::$refDB->write(self::$testDatastore);
         self::$linkDB = new LinkDB(self::$testDatastore, true, false);
         self::$linkFilter = new LinkFilter(self::$linkDB);
@@ -70,7 +70,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            ReferenceLinkDB::$NB_LINKS_TOTAL,
+            \ReferenceLinkDB::$NB_LINKS_TOTAL,
             count(self::$linkFilter->filter(LinkFilter::$FILTER_TAG, ''))
         );
 
@@ -88,7 +88,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            ReferenceLinkDB::$NB_LINKS_TOTAL,
+            \ReferenceLinkDB::$NB_LINKS_TOTAL,
             count(self::$linkFilter->filter(LinkFilter::$FILTER_TEXT, ''))
         );
     }
@@ -363,7 +363,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            ReferenceLinkDB::$NB_LINKS_TOTAL - 1,
+            \ReferenceLinkDB::$NB_LINKS_TOTAL - 1,
             count(self::$linkFilter->filter(LinkFilter::$FILTER_TEXT, '-revolution'))
         );
     }
@@ -423,7 +423,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            ReferenceLinkDB::$NB_LINKS_TOTAL - 1,
+            \ReferenceLinkDB::$NB_LINKS_TOTAL - 1,
             count(self::$linkFilter->filter(LinkFilter::$FILTER_TAG, '-free'))
         );
     }
@@ -464,7 +464,7 @@ class LinkFilterTest extends PHPUnit_Framework_TestCase
             ))
         );
         $this->assertEquals(
-            ReferenceLinkDB::$NB_LINKS_TOTAL,
+            \ReferenceLinkDB::$NB_LINKS_TOTAL,
             count(self::$linkFilter->filter(
                 LinkFilter::$FILTER_TAG | LinkFilter::$FILTER_TEXT,
                 ''
