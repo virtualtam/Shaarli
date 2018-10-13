@@ -1,14 +1,10 @@
 <?php
-/**
- * PageCache tests
- */
-
-require_once 'application/CachedPage.php';
+namespace Shaarli\Feed;
 
 /**
  * Unitary tests for cached pages
  */
-class CachedPageTest extends PHPUnit_Framework_TestCase
+class CachedPageTest extends \PHPUnit\Framework\TestCase
 {
     // test cache directory
     protected static $testCacheDir = 'sandbox/pagecache';

@@ -1,17 +1,16 @@
 <?php
-/**
- * Cache tests
- */
+
+namespace Shaarli\Feed;
 
 // required to access $_SESSION array
 session_start();
 
-require_once 'application/Cache.php';
+require_once 'application/feed/Cache.php';
 
 /**
  * Unitary tests for cached pages
  */
-class CacheTest extends PHPUnit_Framework_TestCase
+class CacheTest extends \PHPUnit\Framework\TestCase
 {
     // test cache directory
     protected static $testCacheDir = 'sandbox/dummycache';

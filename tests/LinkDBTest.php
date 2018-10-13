@@ -5,7 +5,6 @@
 
 use Shaarli\Exception\IOException;
 
-require_once 'application/Cache.php';
 require_once 'application/FileUtils.php';
 require_once 'application/LinkDB.php';
 require_once 'application/Utils.php';

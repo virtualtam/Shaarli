@@ -35,6 +35,7 @@
             "Shaarli\\Api\\": "application/api/",
             "Shaarli\\Api\\Controller\\": "application/api/controller",
             "Shaarli\\Api\\Exception\\": "application/api/exception",
+            "Shaarli\\Feed\\": "application/feed",
             "Shaarli\\Config\\": "application/config/",
             "Shaarli\\Config\\Exception\\": "application/config/exception",
             "Shaarli\\Http\\": "application/http",
