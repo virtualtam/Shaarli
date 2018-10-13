@@ -3,7 +3,7 @@
  * Unitary tests for cleanup_url()
  */
 
-require_once 'application/Url.php';
+require_once 'application/http/Url.php';
 
 class CleanupUrlTest extends PHPUnit_Framework_TestCase
 {

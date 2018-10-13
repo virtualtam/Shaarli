@@ -1,8 +1,8 @@
 <?php
 namespace Shaarli\Api;
 
-use Shaarli\Base64Url;
 use Shaarli\Api\Exception\ApiAuthorizationException;
+use Shaarli\Http\Base64Url;
 
 /**
  * REST API utilities

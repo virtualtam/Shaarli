@@ -37,6 +37,7 @@
             "Shaarli\\Api\\Exception\\": "application/api/exception",
             "Shaarli\\Config\\": "application/config/",
             "Shaarli\\Config\\Exception\\": "application/config/exception",
+            "Shaarli\\Http\\": "application/http",
             "Shaarli\\Security\\": "application/security"
         }
     }

@@ -3,7 +3,7 @@
  * HttpUtils' tests
  */
 
-require_once 'application/HttpUtils.php';
+require_once 'application/http/HttpUtils.php';
 
 /**
  * Unitary tests for index_url()

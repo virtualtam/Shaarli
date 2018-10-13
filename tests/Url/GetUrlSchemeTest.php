@@ -3,7 +3,7 @@
  * Unitary tests for get_url_scheme()
  */
 
-require_once 'application/Url.php';
+require_once 'application/http/Url.php';
 
 class GetUrlSchemeTest extends PHPUnit_Framework_TestCase
 {

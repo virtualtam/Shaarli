@@ -1,6 +1,6 @@
 <?php
 
-require_once 'application/Url.php';
+require_once 'application/http/Url.php';
 
 use Shaarli\Config\ConfigManager;
 
