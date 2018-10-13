@@ -2,7 +2,7 @@
 namespace Shaarli\Api;
 
 use Shaarli\Base64Url;
-use Shaarli\Api\Exceptions\ApiAuthorizationException;
+use Shaarli\Api\Exception\ApiAuthorizationException;
 
 /**
  * REST API utilities

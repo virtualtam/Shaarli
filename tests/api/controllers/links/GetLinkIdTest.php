@@ -117,7 +117,7 @@ class GetLinkIdTest extends \PHPUnit_Framework_TestCase
     /**
      * Test basic getLink service: get non existent link => ApiLinkNotFoundException.
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiLinkNotFoundException
+     * @expectedException Shaarli\Api\Exception\ApiLinkNotFoundException
      * @expectedExceptionMessage Link not found
      */
     public function testGetLink404()

@@ -3,7 +3,7 @@
 
 namespace Shaarli\Api\Controllers;
 
-use Shaarli\Api\Exceptions\ApiBadParametersException;
+use Shaarli\Api\Exception\ApiBadParametersException;
 use Shaarli\Config\ConfigManager;
 use Slim\Container;
 use Slim\Http\Environment;
@@ -158,7 +158,7 @@ class PutTagTest extends \PHPUnit_Framework_TestCase
     /**
      * Test tag update with an empty new tag name => ApiBadParametersException
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiBadParametersException
+     * @expectedException Shaarli\Api\Exception\ApiBadParametersException
      * @expectedExceptionMessage New tag name is required in the request body
      */
     public function testPutTagEmpty()
@@ -193,7 +193,7 @@ class PutTagTest extends \PHPUnit_Framework_TestCase
     /**
      * Test tag update on non existent tag => ApiTagNotFoundException.
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiTagNotFoundException
+     * @expectedException Shaarli\Api\Exception\ApiTagNotFoundException
      * @expectedExceptionMessage Tag not found
      */
     public function testPutTag404()

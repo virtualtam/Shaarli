@@ -66,7 +66,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a malformed JWT token.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Malformed JWT token
      */
     public function testValidateJwtTokenMalformed()
@@ -78,7 +78,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with an empty JWT token.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Malformed JWT token
      */
     public function testValidateJwtTokenMalformedEmpty()
@@ -90,7 +90,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token without header.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Malformed JWT token
      */
     public function testValidateJwtTokenMalformedEmptyHeader()
@@ -102,7 +102,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token without payload
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Malformed JWT token
      */
     public function testValidateJwtTokenMalformedEmptyPayload()
@@ -114,7 +114,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token with an empty signature.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT signature
      */
     public function testValidateJwtTokenInvalidSignatureEmpty()
@@ -126,7 +126,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token with an invalid signature.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT signature
      */
     public function testValidateJwtTokenInvalidSignature()
@@ -138,7 +138,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token with a signature generated with the wrong API secret.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT signature
      */
     public function testValidateJwtTokenInvalidSignatureSecret()
@@ -149,7 +149,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token with a an invalid header (not JSON).
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT header
      */
     public function testValidateJwtTokenInvalidHeader()
@@ -161,7 +161,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token with a an invalid payload (not JSON).
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT payload
      */
     public function testValidateJwtTokenInvalidPayload()
@@ -173,7 +173,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token without issued time.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT issued time
      */
     public function testValidateJwtTokenInvalidTimeEmpty()
@@ -185,7 +185,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with an expired JWT token.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT issued time
      */
     public function testValidateJwtTokenInvalidTimeExpired()
@@ -197,7 +197,7 @@ class ApiUtilsTest extends \PHPUnit_Framework_TestCase
     /**
      * Test validateJwtToken() with a JWT token issued in the future.
      *
-     * @expectedException \Shaarli\Api\Exceptions\ApiAuthorizationException
+     * @expectedException \Shaarli\Api\Exception\ApiAuthorizationException
      * @expectedExceptionMessage Invalid JWT issued time
      */
     public function testValidateJwtTokenInvalidTimeFuture()

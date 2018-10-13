@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Exceptions;
+namespace Shaarli\Api\Exception;
 
 use Slim\Http\Response;
 
@@ -9,7 +9,7 @@ use Slim\Http\Response;
  *
  * Link selected by ID couldn't be found, results in a 404 error.
  *
- * @package Shaarli\Api\Exceptions
+ * @package Shaarli\Api\Exception
  */
 class ApiLinkNotFoundException extends ApiException
 {

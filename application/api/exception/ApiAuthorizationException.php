@@ -1,6 +1,6 @@
 <?php
 
-namespace Shaarli\Api\Exceptions;
+namespace Shaarli\Api\Exception;
 
 /**
  * Class ApiAuthorizationException

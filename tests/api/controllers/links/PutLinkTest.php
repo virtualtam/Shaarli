@@ -210,7 +210,7 @@ class PutLinkTest extends \PHPUnit_Framework_TestCase
     /**
      * Test link update on non existent link => ApiLinkNotFoundException.
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiLinkNotFoundException
+     * @expectedException Shaarli\Api\Exception\ApiLinkNotFoundException
      * @expectedExceptionMessage Link not found
      */
     public function testGetLink404()

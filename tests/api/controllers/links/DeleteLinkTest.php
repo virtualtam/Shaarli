@@ -110,7 +110,7 @@ class DeleteLinkTest extends \PHPUnit_Framework_TestCase
     /**
      * Test DELETE link endpoint: reach not existing ID.
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiLinkNotFoundException
+     * @expectedException Shaarli\Api\Exception\ApiLinkNotFoundException
      */
     public function testDeleteLink404()
     {

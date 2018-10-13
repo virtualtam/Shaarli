@@ -114,7 +114,7 @@ class GetTagNameTest extends \PHPUnit_Framework_TestCase
     /**
      * Test basic getTag service: get non existent tag => ApiTagNotFoundException.
      *
-     * @expectedException Shaarli\Api\Exceptions\ApiTagNotFoundException
+     * @expectedException Shaarli\Api\Exception\ApiTagNotFoundException
      * @expectedExceptionMessage Tag not found
      */
     public function testGetTag404()

@@ -3,7 +3,7 @@
 
 namespace Shaarli\Api\Controllers;
 
-use Shaarli\Api\Exceptions\ApiBadParametersException;
+use Shaarli\Api\Exception\ApiBadParametersException;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
